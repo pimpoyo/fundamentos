@@ -2,9 +2,10 @@
 <body>
 	<?php
 		$edad = $_REQUEST['edad'];
+		$sexo = $_REQUEST['sexo'];
 		echo '<p>Tu edad es ' . $edad . '</p>';
+		echo '<p>Eres ' . $sexo . '</p>';
 		
-		$sexo = "mujer";
 
 		if ($sexo == "mujer") {
 			$edad = $edad - 5;
