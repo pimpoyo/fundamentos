@@ -1,0 +1,114 @@
+
+
+
+
+.form {
+    width: 960px;
+    background-color: #424242;
+    margin: 0 auto;
+}
+
+.form2 {
+    width: 960px;
+    background-color: #FFFFFF;
+    margin: 3% auto;
+   
+}
+
+.form-container {
+    width: 900px;
+    background-color: #FFFFFF;
+    margin: 3% auto;
+   
+}
+
+
+.form-header {
+    width: 100%;
+    font-family: Avenir;
+    font-size: 250%;
+    color: white;
+    text-align: center;
+/*    margin: 15px auto 3px auto;*/
+    
+    
+}
+
+
+.form-step-on {
+    font-family: Avenir;
+    font-size: 120%;
+    color: white;
+    display: inline;
+    margin: 0 30px;
+    
+    
+}
+
+
+.form-step-off {
+    font-family: Avenir;
+    font-size: 120%;
+    color: #848484;
+    display: inline;
+    margin: 0 30px;
+    
+    
+}
+
+
+label {
+    font-family: Avenir;
+    font-size: 100%;
+    font-weight: 500;
+    color: #8181F7;
+    margin: 5% auto;
+    padding-top: 3%;    
+}
+
+
+input {
+    font-family: Avenir;
+    font-size: 80%;
+    margin: 1% auto;
+}
+
+
+.sexo {
+    font-family: Avenir;
+    font-size: 100%;
+}
+
+.enviar {
+    float: right;
+    font-family: Avenir;
+    color: white;
+    font-size: 100%;
+    background-color: #8181F7;
+    border-style: none;
+    box-shadow: none;
+    border-radius: 4px;
+    margin: 0 auto;
+}
+    
+
+.thanks {
+    font-family: Avenir;
+    color: black;
+    font-size: 100%;
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
