@@ -1,5 +1,6 @@
 <html>
 <body>
+
 	<?php
 		$flag = true;
 
@@ -66,5 +67,7 @@ if ($flag == true) {
 	echo "<a href=\"form-direction.html\">Volver para corregir datos incorrectos</a>";
 }
 	?>
+    
+    
 </body>
 </html>

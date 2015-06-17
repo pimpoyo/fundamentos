@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8" /> 
+  <link rel="stylesheet" href="form.css">
+</head>
+<body>
+  <div class="form">
+      <div class="logo"><a href="index.html"><img class="logo" src="img/logo.png" alt="logo"/></a></div>
+        <a href="index.html"><p class="form-header">InnoTech</p></a>
+       <div class="sections">
+        <a href="form-order.html"><p class="form-step-on">Productos</p></a>
+        <a href="contacto.html"><p class="form-step-off">Contacto</p></a>
+        </div>
+      
+    <p class="form-step-on">Wearables</p>
+    <div class="form2">
+      <div class="form-container">
+        <form action="procesapedido.php" method="POST">
+    <div class="products">
+          <div class="product">
+            <div class="image">
+              <img src="img/product1.jpg" alt="producto1"/>
+            </div>
+            <div class="description">
+              <p class="text_description">Pulsera Nike - 35&#8364</p>
+              <input type="hidden" name="product_price1" value="35">
+              <input type="hidden" name="product_name1" value="Pulsera Nike">
+            </div>
+            <div class="amount">
+              <input type="number" min="0" max="20" value="0" name="amount1">
+            </div>
+          </div><!-- product -->
+          <div class="product">
+            <div class="image">
+              <img src="img/product2.jpg" alt="producto2"/>
+            </div>
+            <div class="description">
+              <p class="text_description">Pulsera Eléctrica - 20&#8364</p>
+              <input type="hidden" name="product_price2" value="20">
+              <input type="hidden" name="product_name2" value="Pulsera Nike">
+            </div>
+            <div class="amount">
+              <input type="number" min="0" max="20" value="0" name="amount2">
+            </div>
+          </div><!-- product -->
+          <div class="product">
+            <div class="image">
+              <img src="img/product3.jpg" alt="producto3"/>
+            </div>
+            <div class="description">
+              <p class="text_description">Pulsera Runner - 40&#8364</p>
+              <input type="hidden" name="product_price3" value="40">
+              <input type="hidden" name="product_name3" value="Pulsera Nike">
+            </div>
+            <div class="amount">
+              <input type="number" min="0" max="20" value="0" name="amount3">
+            </div>
+          </div><!-- product -->
+          <div class="product">
+            <div class="image">
+              <img src="img/product4.jpg" alt="producto4"/>
+            </div>
+            <div class="description">
+              <p class="text_description">Reloj Apple - 60&#8364</p>
+              <input type="hidden" name="product_price4" value="60">
+              <input type="hidden" name="product_name4" value="Pulsera Nike">
+            </div>
+            <div class="amount">
+              <input type="number" min="0" max="20" value="0" name="amount4">
+            </div>
+          </div><!-- product -->
+          <div class="product">
+            <div class="image">
+              <img src="img/product5.jpg" alt="producto5"/>
+            </div>
+            <div class="description">
+              <p class="text_description">Reloj Tous - 50&#8364</p>
+              <input type="hidden" name="product_price5" value="50">
+              <input type="hidden" name="product_name5" value="Pulsera Nike">
+            </div>
+            <div class="amount">
+              <input type="number" min="0" max="20" value="0" name="amount5">
+            </div>
+          </div><!-- product -->
+          <div class="product">
+            <div class="image">
+              <img src="img/product6.jpg" alt="producto6"/>
+            </div>
+            <div class="description">
+              <p class="text_description">Pulsera Hard-Rock - 20&#8364</p>
+              <input type="hidden" name="product_price6" value="20">
+              <input type="hidden" name="product_name6" value="Pulsera Nike">
+            </div>
+            <div class="amount">
+              <input type="number" min="0" max="20" value="0" name="amount6">
+            </div>
+          </div><!-- product -->
+        </div>
+         <div class="buy">
+          <input type="submit" value="Comprar">
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+    
+    <footer class="form">
+            <div class="footer">
+                <img src="img/f.png" alt="facebook" />
+                <img src="img/t.png" alt="twitter" />
+                <img src="img/p.png" alt="pinterest" />
+                <img src="img/youTube.png" alt="youtube" />
+                <img src="img/in.png" alt="linkedin" />
+            </div>
+        </footer>
+</body>
+</html>

@@ -1,6 +1,10 @@
+body {
+    font-family: Avenir;
+}
 
-
-
+a {
+    text-decoration: none;
+}
 
 .form {
     width: 960px;
@@ -8,57 +12,65 @@
     margin: 0 auto;
 }
 
+img.logo {
+    width: 60px;
+    margin: 20px auto 0 auto;
+}
+
+div.logo{
+    text-align: center;
+}
+
 .form2 {
     width: 960px;
     background-color: #FFFFFF;
     margin: 3% auto;
-   
 }
 
 .form-container {
+    min-height: 600px;
     width: 900px;
     background-color: #FFFFFF;
     margin: 3% auto;
-   
 }
 
+.form-container h1 {
+    padding-top: 60px;
+}
+
+.contact {
+    text-align: center;
+}
 
 .form-header {
+    margin: 0 auto;
     width: 100%;
-    font-family: Avenir;
-    font-size: 250%;
+    font-size: 100px;
     color: white;
     text-align: center;
 /*    margin: 15px auto 3px auto;*/
-    
-    
 }
 
 
+.sections {
+    text-align: center;
+}
+
 .form-step-on {
-    font-family: Avenir;
     font-size: 120%;
     color: white;
     display: inline;
     margin: 0 30px;
-    
-    
 }
 
-
 .form-step-off {
-    font-family: Avenir;
     font-size: 120%;
     color: #848484;
     display: inline;
     margin: 0 30px;
-    
-    
 }
 
-
 label {
-    font-family: Avenir;
     font-size: 100%;
     font-weight: 500;
     color: #8181F7;
@@ -66,22 +78,49 @@ label {
     padding-top: 3%;    
 }
 
-
 input {
-    font-family: Avenir;
     font-size: 80%;
     margin: 1% auto;
 }
 
+.amount {
+  margin: 12px;
+  float: right;
+}
+
+.description {
+  width: 61%;
+  margin: 0 12px;
+  float: left;
+  font-size: 14px;
+}
+
+.products {
+    margin: 0 auto;
+}
+
+.buy {
+    clear: both;
+}
+
+
+.product {
+  float: left;
+  width: 244px;
+}
+
+.image {
+  height: 220px;
+  width: 220px;
+  margin: 0 12px;
+}
 
 .sexo {
-    font-family: Avenir;
     font-size: 100%;
 }
 
 .enviar {
     float: right;
-    font-family: Avenir;
     color: white;
     font-size: 100%;
     background-color: #8181F7;
@@ -91,24 +130,37 @@ input {
     margin: 0 auto;
 }
     
-
 .thanks {
-    font-family: Avenir;
     color: black;
     font-size: 100%;
-    
-    
+}
+
+input[type=number] {
+  width: 3em;
+}
+
+input[type=number]:in-range {
+  outline: lightgreen solid 1px;
+}
+
+input[type=number]:out-of-range {
+  outline: red solid 1px;
+}
+
+table {
+    padding-top: 60px;
 }
 
 
+.footer {
+    height: 50px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 15px;
+    
+}
 
-
-
-
-
-
-
-
-
-
-
+.footer img {
+    width: 30px;
+    margin: 0 30px;
+}
