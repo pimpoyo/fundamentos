@@ -71,9 +71,16 @@ foreach ($products as $product) {
 ?> 
 		</table>
 <?
-echo '<div class="no_iva">Precio total sin IVA: ' . $subtotal_no_iva . '&#8364</div>';
-echo '<div class="with_iva">Precio total con IVA: ' . $subtotal_with_iva . '&#8364</div>';
+echo '<div class="no_iva">Precio total sin IVA: ' . number_format($subtotal_no_iva, 2, ',', '.') . '&#8364</div>';
+echo '<div class="with_iva">Precio total con IVA: ' . number_format($subtotal_with_iva, 2, ',', '.') . '&#8364</div>';
 ?>
+  <!-- Esto lo que hace es pasar al siguiente paso de php-->
+        <form action="procesa1.php" method="POST">
+          <input type="hidden" name="importe" value="<?php echo "$subtotal_with_iva"; ?>">
+          <div class="buy">
+            <button type="submit" class="submit">Siguiente</button>
+          </div>
+        </form>
 	  </div>
 	</div>
   </div>

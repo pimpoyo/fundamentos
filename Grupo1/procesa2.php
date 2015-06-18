@@ -1,3 +1,106 @@
+<?php
+
+$importe = $_REQUEST['importe'];
+$flag = true;
+
+list($year, $month, $day) = split('-', $_REQUEST['bday']);
+
+$today = getdate();
+$today_day = $today['mday'];
+$today_month = $today['mon'];
+$today_year = $today['year'];
+
+$age = $today_year - $year;
+	if ($age <= 18) {
+		if($age == 18) {
+			$m = $today_month - $month;
+			if ($m <= 0) {
+				if ($m == 0) {
+					$d = $today_day - $day;
+					if ($d < 0) {
+						echo 'Menor de edad';
+						$flag = false;
+					}
+				} else {
+					echo 'Menor de edad';
+					$flag = false;
+				}
+			} else {
+				$d = $today_day - $day;
+			}
+		} else {
+			echo 'Menor de edad';
+			$flag = false;
+		}
+	}
+
+if ($_REQUEST['firstname'] == "") {
+	print "Falta el nombre<br/>\n";
+	$flag = false;
+} elseif(strlen($_REQUEST['firstname']) < 3) {
+	print "Nombre muy corto<br/>\n";
+	$flag = false;
+} else {
+	$firstname = $_REQUEST['firstname'];
+} 
+
+if ($_REQUEST['surname1'] == "") {
+	print "Falta el apellido2<br/>\n";
+	$flag = false;
+} else {
+	$surname1 = $_REQUEST['surname1'];
+} 
+
+if ($_REQUEST['surname2'] == "") {
+	print "Falta el apellido2<br/>\n";
+	$flag = false;
+} else {
+	$surname2 = $_REQUEST['surname2'];
+} 
+
+if ($_REQUEST['dni'] == "") {
+	print "Falta el dni<br/>\n";
+	$flag = false;
+} elseif(strlen($_REQUEST['dni']) < 9) {
+	print "DNI muy corto<br/>\n";
+	$flag = false;
+} else {
+	// Para comprobar si es dni o nif, hoy no da tiempo, futura implementación $first_char_dni = substr($_REQUEST['dni'],0);
+	$dni_letter = substr($_REQUEST['dni'], -1);
+	$dni_number = substr($_REQUEST['dni'], 0, -1);
+	if ( substr("TRWAGMYFPDXBNJZSQVHLCKE", $dni_number%23, 1) == $dni_letter && strlen($dni_letter) == 1 && strlen ($dni_number) == 8 ){
+		$dni = $_REQUEST['dni'];
+	}else{
+		echo 'DNI inválido';
+		$flag = false;
+	}
+} 
+
+if ($_REQUEST['email'] == "") {
+	print "Falta el email<br/>\n";
+	$flag = false;
+} elseif (!filter_var($_REQUEST['email'], FILTER_VALIDATE_EMAIL)) {
+	echo 'Email invalido';	
+	$flag = false;
+} else {
+	$email = $_REQUEST['email'];
+}
+
+if ($_REQUEST['usrtel'] == "") {
+	print "Falta el teléfono<br/>\n";
+	$flag = false;
+} elseif(strlen($_REQUEST['usrtel']) < 9) {
+	print "Teléfono muy corto<br/>\n";
+	$flag = false;
+} else {
+    $tel = $_REQUEST['usrtel'];
+}
+
+if ($flag != true) {
+	echo "<a href=\"procesa1.php\">Volver para corregir datos incorrectos</a>";
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,18 +110,26 @@
 </head>
 <body>
         <div class="form">
-        <div class="logo"><a href="index.html"><img class="logo" src="img/logo.png" alt="logo"/></a></div>
-        <a href="index.html"><p class="form-header">InnoTech</p></a>
-	<p class="form-header">FORMULARIO DE COMPRA</p>
-	<p class="form-step-off">Datos personales</p>
-    <p class="form-step-on">Dirección de envío</p>
-    <p class="form-step-off">Forma de pago</p>
-    <p class="form-step-off">Compra finalizada</p>
+	        <div class="logo"><a href="index.html"><img class="logo" src="img/logo.png" alt="logo"/></a></div>
+		      <a href="index.html"><p class="form-header">InnoTech</p></a>
+
+	        <p class="form-step-on">FORMULARIO DE COMPRA</p>
+          <div>
+            <p class="form-step-off">Datos personales</p>
+            <p class="form-step-on">Dirección de envío</p>
+            <p class="form-step-off">Forma de pago</p>
+            <p class="form-step-off">Compra finalizada</p>
+          </div>    
 	
     <div class="form2">
         <div class="form-container">
     
-    <form action="form-direction.php" method="POST">
+            <div class="with_iva">Importe: <?php echo number_format($importe, 2, ',', '.');?>&#8364</div>  
+    <form action="procesa3.php" method="POST">
+              <input type="hidden" name="importe" value="<?php echo "$importe"; ?>"> 
+              <input type="hidden" name="firstname" value="<?php echo "$firstname"; ?>"> 
+              <input type="hidden" name="surname1" value="<?php echo "$surname1"; ?>"> 
+              <input type="hidden" name="surname2" value="<?php echo "$surname2"; ?>"> 
 		<div><label class="data-label" for="street">Calle y n&uacutemero: </label><input type="text" class="input-text" name="street" required></div>
 		<div><label class="data-label" for="zipCode">C&oacutedigo postal: </label><input type="text" class="input-text" name="zipCode" required></div>
 		<div><label class="data-label" for="city">Ciudad: </label><input type="text" class="input-text" name="city" required></div>
@@ -261,8 +372,9 @@
 			</select>		
 		</div>
 		<div><label class="data-label" for="phone">Tel&eacutefono: </label><input type="text" class="input-text" name="phone"></div>
-		<input type="submit" value="Aceptar">
-        <input class="enviar" type="submit" value="Continuar" size="10"/>
+    <div class="buy">
+      <button type="submit" class="submit">Siguiente</button>
+    </div>  
 	</form>   
         </div>
     </div>

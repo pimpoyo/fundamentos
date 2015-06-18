@@ -94,6 +94,7 @@ input {
 
 .buy {
   clear: both;
+  text-align: center;
 }
 
 
@@ -158,6 +159,7 @@ th {
 
 .no_iva {
   font-size: 20px;
+  padding-top: 50px;
   text-align: center;
 }
 
@@ -178,6 +180,18 @@ th {
 .footer img {
   width: 30px;
   margin: 0 3%;
+}
+
+.submit {
+  background-color: #807dfa;
+  color: white;
+  font-size: 18px;
+  padding: 4px 25px;
+  border: 0;
+}
+
+.submit:hover {
+  background-color: #5350bd;
 }
 
 //mediaqueries rules

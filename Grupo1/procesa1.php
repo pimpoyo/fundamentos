@@ -1,3 +1,6 @@
+<?php 
+  $importe = $_REQUEST['importe'];
+?>
 <!DOCTYPE html>
 <html>
 
@@ -8,17 +11,22 @@
     </head>
     <body>
         <div class="form">
-        <p class="form-header">FORMULARIO DE COMPRA</p>
-        <p class="form-step-on">Datos personales</p>
-        <p class="form-step-off">Dirección de envío</p>
-        <p class="form-step-off">Forma de pago</p>
-        <p class="form-step-off">Compra finalizada</p>
-            
+	        <div class="logo"><a href="index.html"><img class="logo" src="img/logo.png" alt="logo"/></a></div>
+		      <a href="index.html"><p class="form-header">InnoTech</p></a>
+
+	        <p class="form-step-on">FORMULARIO DE COMPRA</p>
+          <div>
+            <p class="form-step-on">Datos personales</p>
+            <p class="form-step-off">Dirección de envío</p>
+            <p class="form-step-off">Forma de pago</p>
+            <p class="form-step-off">Compra finalizada</p>
+          </div>    
 
             <div class="form2">
             <div class="form-container">
-                
-                <form action="data.php" method="post">
+            <div class="with_iva">Importe: <?php echo number_format($importe, 2, ',', '.');?>&#8364</div>  
+              <form action="procesa2.php" method="post">
+              <input type="hidden" name="importe" value="<?php echo "$importe"; ?>"> 
                     <br/>
                 
                     <label for="firstname">Nombre: (*)</label><br/>
@@ -49,9 +57,9 @@
                     <input type="checkbox" id="suscription" name="OK"/>Quiero suscribirme y recibir información de las actualizaciones y ofertas.<br/><br/>
                     
                     <input type="hidden" name="#" value="#"/>
-                    
-                    <input class="enviar" type="submit" value="Continuar" size="10"/>
-                    
+                    <div class="buy">
+                      <button type="submit" class="submit">Siguiente</button>
+                    </div>  
                     <br/>
                     
                 </form>
@@ -61,3 +69,5 @@
             
            
         </div>
+      </body>
+    </html>
