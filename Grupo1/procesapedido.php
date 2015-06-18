@@ -42,16 +42,28 @@ $subtotal_with_iva = $subtotal_no_iva * 1.21;
 	  <div class="form-container">
 
 		  <table>
+			<tr>
+				<td>Nombre</td>
+				<td class="text_right">Precio</td>
+				<td class="text_right">Cantidad</td>
+				<td class="text_right">Subtotal</td>
+			</tr>
 <?php
 
 // Se construyen las filas de la tabla que se va a mostrar como resultado
+$i = 1;
 foreach ($products as $product) {
-	echo '<tr>';
+	if ($i%2 == 0)
+		echo '<tr class="even">';
+	else
+		echo '<tr class="odd">';
+		
 	echo '<td>' . $product['name'] . '</td>'; 
-	echo '<td>' . $product['price'] . '</td>'; 
-	echo '<td>' . $product['amount'] . '</td>'; 
-	echo '<td>' . $product['subtotal'] . '</td>'; 
-	echo '</tr>'; 
+	echo '<td class="text_right">' . $product['price'] . '</td>'; 
+	echo '<td class="text_right">' . $product['amount'] . '</td>'; 
+	echo '<td class="text_right">' . $product['subtotal'] . '</td>'; 
+	echo '</tr>';
+	$i++;	
 }
 ?> 
 		</table>

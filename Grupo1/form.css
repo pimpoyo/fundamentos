@@ -149,6 +149,16 @@ input[type=number]:out-of-range {
 
 table {
     padding-top: 60px;
+	width: 70%;
+	margin: 0 auto;
+}
+
+.odd td {
+	background-color: #EEEEEE;
+}
+
+.text_right {
+	text-align: right;
 }
 
 
