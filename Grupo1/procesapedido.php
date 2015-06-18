@@ -43,17 +43,20 @@ $subtotal_with_iva = $subtotal_no_iva * 1.21;
 
 		  <table>
 			<tr>
-				<td>Nombre</td>
-				<td class="text_right">Precio</td>
-				<td class="text_right">Cantidad</td>
-				<td class="text_right">Subtotal</td>
+				<th>Nombre</th>
+				<th class="text_right">Precio</th>
+				<th class="text_right">Cantidad</th>
+				<th class="text_right">Subtotal</th>
 			</tr>
 <?php
 
 // Se construyen las filas de la tabla que se va a mostrar como resultado
 $i = 1;
 foreach ($products as $product) {
-	if ($i%2 == 0)
+  //Aquí esdonde se distingue entre par e impar
+  // $i%2 devuelve el resto de dividir $i entre 2, asi se puede distinguir entre par e impar
+  // devolviendo 0 en el caso que sea par y 1 en el caso que sea impar
+  if ($i%2 == 0) 
 		echo '<tr class="even">';
 	else
 		echo '<tr class="odd">';
@@ -68,8 +71,8 @@ foreach ($products as $product) {
 ?> 
 		</table>
 <?
-echo '<div>Precio total sin IVA: ' . $subtotal_no_iva . '</div>';
-echo '<div>Precio total con IVA: ' . $subtotal_with_iva . '</div>';
+echo '<div class="no_iva">Precio total sin IVA: ' . $subtotal_no_iva . '&#8364</div>';
+echo '<div class="with_iva">Precio total con IVA: ' . $subtotal_with_iva . '&#8364</div>';
 ?>
 	  </div>
 	</div>
