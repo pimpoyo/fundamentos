@@ -7,9 +7,7 @@ a {
 }
 
 .form {
-  width: 960px;
   background-color: #424242;
-  margin: 0 auto;
 }
 
 img.logo {
@@ -22,16 +20,13 @@ div.logo{
 }
 
 .form2 {
-  width: 960px;
   background-color: #FFFFFF;
-  margin: 3% auto;
 }
 
 .form-container {
-  min-height: 600px;
-  width: 900px;
   background-color: #FFFFFF;
   margin: 3% auto;
+  width: 100%;
 }
 
 .form-container h1 {
@@ -45,12 +40,10 @@ div.logo{
 .form-header {
   margin: 0 auto;
   width: 100%;
-  font-size: 100px;
   color: white;
   text-align: center;
-  /*    margin: 15px auto 3px auto;*/
+  font-size: 50px;
 }
-
 
 .sections {
   text-align: center;
@@ -184,5 +177,65 @@ th {
 
 .footer img {
   width: 30px;
-  margin: 0 30px;
+  margin: 0 3%;
+}
+
+//mediaqueries rules
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .form {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .form2 {
+    width: 100%;
+    margin: 3% auto;
+  }
+  
+  .form-container {
+    width: 100%;
+    margin: 3% auto;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  .form {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .form2 {
+    width: 100%;
+    margin: 3% auto;
+  }
+  
+  .form-header {
+    font-size: 100px;
+  }
+  
+  .form-container {
+    width: 100%;
+    margin: 3% auto;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .form {
+    width: 960px;
+    margin: 0 auto;
+  }
+
+  .form2 {
+    width: 960px;
+    margin: 3% auto;
+  }
+  
+  .form-header {
+    font-size: 100px;
+  }
+
+  .form-container {
+    width: 80%;
+    margin: 3% auto;
+  }
 }
